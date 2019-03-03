@@ -1,0 +1,26 @@
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media screen and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+footer{
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $charcoal;
+  color: $salmon;
+  form{
+    input{
+      width: 250px;
+    }
+    textarea{
+      height: 170px;
+      width: 500px;
+      @include tablet{
+        width: 250px;
+      }
+    }
+  }
+}

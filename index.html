@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vous pouvez retrouver ici nombre d'informations concernant l'excellentissime Olivier GISSELMANN">
+    <meta name="author" content="Olivier GISSELMANN">
+    <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+    <title>Olivier GISSELMANN - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Olivier GISSELMANN - Portfolio</h1>
+        <a href="https://www.linkedin.com/in/olivier-gisselmann/">LinkedIn</a>
+    </header>
+    <main id="accueil">
+        <section id="projets">
+            <h2>Projets</h2>
+            <h3>Voici la liste de mes différents projets réalisés ces dernières années</h3>
+            <div id="container-projets">
+                <div>
+                    <p>Projet UF</p>
+                    <a href="projets.html#uf"><img src="https://dxmtechnologie.com/wp-content/uploads/2015/09/network-infrastructure1.jpg" alt="image d'un switch"></a>
+                </div>
+                <div>
+                    <p>Projet YDays</p>
+                    <a href="projets.html#ydays"><img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX30502640.jpg" alt="hacker"></a>
+                </div>
+                <div>
+                    <p>Projet SAS</p>
+                    <a href="projets.html#sas"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Scandinavian_Airlines_logo.svg/1200px-Scandinavian_Airlines_logo.svg.png" alt="logo sas"></a>
+                </div>
+                <div>
+                    <p>Projet Serre</p>
+                    <a href="projets.html#serre"><img src="https://previews.123rf.com/images/kenishirotie/kenishirotie1501/kenishirotie150100045/35598526-l%C3%A9gumes-culture-hydroponique-en-serre-%C3%A0-cameron-highlands.jpg" alt="image d'une serre hydroponique"></a>
+                </div>
+                <div>
+                    <p>Projet Workshop</p>
+                    <a href="projets.html#workshop"><img src="https://yt3.ggpht.com/a-/AAuE7mCG2kY7EoNe4Ekd9FThHvhdqOq-dE7WkzVw_A=s900-mo-c-c0xffffffff-rj-k-no" alt="logo d'ynov campus"></a>
+                </div>
+            </div>
+        </section>
+        <section id="expériences">
+            <h2>Expériences</h2>
+            <h4>Note: Au cours de mon parcours scolaire, je n'ai pu accumuler que très peu d'expériences professionnelles.</h4>
+            <br>
+            <div>
+                <h3>Stage de 3ème</h3>
+                <p>Nature du stage: Stage d'observation en entreprise</p>
+                <p>Entreprise: R'Sud Medical</p>
+                <p>Lieu du stage: Gréasque 13850</p>
+                <p>Résumé: Au cours de ce stage de 7 jours, j'ai suivi le quotidien de mon tuteur. Son métier consiste en plusieurs parties, toutes liées à l'informatique.</p>
+                <p>La première est la gestion des serveurs de l'entreprise, ainsi que de son réseau, parc informatique et standard téléphonique. J'ai donc eu la chance d'observer la salle serveur, ainsi que l'installation interne de l'entreprise.</p>
+                <p>La seconde partie est la création et gestion du site web de l'entreprise ainsi que son intranet. Le site web était somme toute classique, mais l'intranet était bien plus complexe. En effet, il fallait n'autoriser l'accès qu'au personnel de l'entreprise, et leur permettre de communiquer entre eux, de fixer des rendez-vous ainsi que de consulter des fiches patients.</p>
+                <p>La dernière partie de son travail consiste à gérer les tickets d'incidence générés par ses collaborateurs. Il devait pouvoir intervenir à tout moment s'il y avait une panne réseau ou bien si un de ses collaborateurs avait des difficultéd à utiliser l'outil informatique.</p>
+            </div>
+        </section>
+        <section id="compétences">
+            <h2>Mes compétences</h2>
+            <h3>Voici un graphique regroupant et classant mes différentes compétences en développement ainsi qu'en gestion de projet</h3>
+            <canvas id="chart"></canvas>
+            <h2>Mes certifications</h2>
+            <p>Je suis actuellement en train de passer le CCNA1, la certification constructeur CISCO réseau de niveau 1.</p>
+        </section>
+    </main>
+    <footer>
+        <form action="#" method="post">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Formulaire de contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="nom">Votre nom</label></td>
+                        <td><input type="text" name="nom" id="nom"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="prenom">Votre prénom</label></td>
+                        <td><input type="text" name="prenom" id="prenom"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Votre email</label></td>
+                        <td><input type="email" name="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="msg">Votre message</label></td>
+                        <td><textarea id="msg"></textarea></td>
+                    </tr>
+                    <tr>
+                        <button type="submit">Envoyer</button>
+                    </tr>
+                </tbody>
+
+            </table>
+        </form>
+    </footer>
+    <script>
+        let ctx = document.getElementById("chart").getContext('2d');
+        let chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["HTML5", "CSS3", "JS", "C", "C++", "Gestion de projet"],
+                datasets: [{
+                    label: '% de maitrise',
+                    data: [90, 60, 50, 60, 75, 55],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

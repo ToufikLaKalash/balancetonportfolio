@@ -1,0 +1,134 @@
+$charcoal: #3E454C;
+$light-blue: #7ECEFD;
+$salmon: #FF7F66;
+$dark-blue: #2185C5;
+$dark-salmon: #FF6966;
+
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media screen and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+main{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: 'Overpass';
+  &#accueil section{
+    /*margin-top: 5%;*/
+    text-align: center;
+    width: (100%/3);
+    @include tablet{
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+  &#ficheprojets section{
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+$cell-height: 150px;
+
+#projets{
+  background: $salmon;
+  #container-projets{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    div{
+      text-align: center;
+      background-color: inherit;
+      font-size: 1.3em;
+      color: $charcoal;
+      padding: 5px;
+      transition: background-color ease 0.3s;
+      &:hover{
+        background-color: $dark-salmon;
+      }
+      @include tablet{
+        width: 100%;
+      }
+      img{
+        width: 200px;
+        height: 200px;
+        @include tablet{
+          width: 100%;
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+#expériences{
+  background: $dark-blue;
+  p{
+    margin: 20px 0;
+  }
+}
+
+#compétences{
+  background: $beige;
+  #chart{
+    width: 100%;
+  }
+}
+
+.projet{
+  ul{
+    margin: 20px 0 0 0;
+  }
+  li{
+    display: block;
+  }
+}
+
+#ficheprojets .projet{
+  &:nth-child(2n){
+    background-color: $salmon;
+    a{
+      color: $dark-salmon;
+    }
+  }
+  &:nth-child(2n+1){
+    background-color: $light-blue;
+    a{
+      color: $dark-blue;
+    }
+  }
+  a{
+    text-decoration: none;
+    background-color: $charcoal;
+    padding: 5px;
+    font-size: 1.2em;
+    transition: font-size ease-in 0.3s;
+    &:hover{
+      font-size: 1.4em;
+    }
+  }
+  .content{
+    opacity: 0;
+    transition: opacity ease 1s;
+    margin: 20px 0;
+    img{
+      width: 500px;
+      @include tablet{
+        width: 250px;
+      }
+    }
+    iframe{
+      @include tablet{
+        width: 300px;
+        height: 200px;
+      }
+    }
+    &.active{
+      opacity: 1;
+    }
+  }
+}

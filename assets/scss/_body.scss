@@ -1,0 +1,15 @@
+$charcoal: #3E454C;
+$beige: #FFF6E5;
+$light-blue: #7ECEFD;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body, html{
+  background-color: $light-blue;
+  color: $charcoal;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  box-sizing: border-box;
+}
